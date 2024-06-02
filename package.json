@@ -19,7 +19,8 @@
     "astro": "^4.8.3",
     "typescript": "^5.4.5"
   },
-  "devDependencies":{
+  "devDependencies": {
+    "@biomejs/biome": "1.7.3",
     "wrangler": "3.57.1"
   }
 }
