@@ -1,59 +1,75 @@
 ---
-import BaseHead from "../components/BaseHead.astro";
-import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
+import { getCollection } from "astro:content";
+import Layout from "../layouts/Layout.astro"
+import FormattedDate from "../components/FormattedDate.astro";
+const posts = (await getCollection('blog')).sort(
+	(a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
+);
+
 ---
 
-<!doctype html>
-<html lang="en">
-	<head>
-		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
-  </head>
-	<body>
-		<main>
-			<h1>Thibault Le Ouay - Ducasse</h1>
-			<p>
-				👷‍♀️ Currently building <a href="https://openstatus.dev">OpenStatus</a> 👷‍♀️
-				<br />
-				⚡  Speed Matters ⚡
-				<br />
-				<br />
-				I write code for a living.
-				<br />
-				Want to hire me? <a href="mailto:thibautleouay@gmail.com">Email me</a>
-				<br />
-			</p>
-      <h2>My Tools 🛠</h2>
-      <h3>Coffee ☕️</h3>
-      <ul>
-        <li>Commandante C40 MK3</li>
-        <li>Orea Brewer V3</li>
-        <li>Orea Big Boi</li>
-        <li>Chemex</li>
-        <li>V60</li>
-        <li>Aeropress</li>
-      </ul>
-      <h3> Computer 💻</h3>
-      <ul>
-        <li>Macbook Pro 13" M1</li>
-        <li>HHKB Classic</li>
-        <li>Logitech MX Master 3</li>
-        <li>Opal Camera</li>
-        <li>LazyVim </li>
-        <li>Zed</li>
-      </ul>
-        <h2>Useful links 🔗</h2>
-			<ul>
-				<li><a href="https://bsky.app/profile/thibaultleouay.dev">bsky</a></li>
-				<li><a href="https://www.openstatus.dev">OpenStatus</a></li>
-				<li><a href="https://github.com/thibaultleouay">GitHub</a></li>
-			    <li><a href="https://www.linkedin.com/in/thibault-le-ouay-ducasse/">LinkedIn</a></li>
-			    <li><a href="https://www.strava.com/athletes/10276254">Strava</a></li>
-   </ul>
+<Layout>
+        <main>
+            <h1 class="text-xl">Thibault Le Ouay - Ducasse</h1>
+            <p> <a href="/tools">Tools </a>  / <a href="/now"> Now</a> </p>
+            <p>
+                👷‍♀️ Currently building <a href="https://openstatus.dev"
+                    >OpenStatus</a
+                > 👷‍♀️
+                <br />
+                ⚡ Speed Matters ⚡
+                <br />
+                <br />
+                I write code for a living.
+                <br />
+                Want to hire me? <a href="mailto:thibautleouay@gmail.com"
+                    >Email me</a
+                >
+                <br />
+            </p>
+            <h2 class="font-semibold text-lg">Articles</h2>
+            <ul>
+					{
+						posts.map((post) => (
+							<li class="">
+								<a class="hover:text-gray-500" href={`/${post.id}/`}>
+									{post.data.title}
+									<span class="text-sm">
+										<FormattedDate date={post.data.pubDate} />
+									</span>
+								</a>
+							</li>
+						))
+					}
+				</ul>
 
-			<p>
-				Found a typo send me <a href="https://github.com/thibaultleouay/thibaultleouaydotdev">PR</a>
-			</p>
+            <h2>Useful links 🔗</h2>
+            <ul>
+                <li>
+                    <a href="https://bsky.app/profile/thibaultleouay.dev"
+                        >bsky</a
+                    >
+                </li>
+                <li><a href="https://www.openstatus.dev">OpenStatus</a></li>
+                <li><a href="https://github.com/thibaultleouay">GitHub</a></li>
+                <li>
+                    <a
+                        href="https://www.linkedin.com/in/thibault-le-ouay-ducasse/"
+                        >LinkedIn</a
+                    >
+                </li>
+                <li>
+                    <a href="https://www.strava.com/athletes/10276254">Strava</a
+                    >
+                </li>
+            </ul>
 
-		</main>
-	</body>
-</html>
+            <p>
+                Found a typo send me <a
+                    href="https://github.com/thibaultleouay/thibaultleouaydotdev"
+                    >PR</a
+                >
+            </p>
+        </main>
+
+</Layout>

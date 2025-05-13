@@ -1,0 +1,27 @@
+---
+import 'virtual:uno.css'
+import BaseHead from "../components/BaseHead.astro";
+import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
+
+interface Props {
+    title?: string;
+    description?: string;
+}
+
+const { title, description } = Astro.props;
+
+---
+<!doctype html>
+<html lang="en">
+    <head>
+    <BaseHead
+        title={title ? title : SITE_TITLE}
+        description={description ? description : SITE_DESCRIPTION}
+    />
+    </head>
+    <body class="font-mono max-w-2xl mx-auto p-2ch ">
+
+    <slot />
+
+    </body>
+    </html>
