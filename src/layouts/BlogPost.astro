@@ -13,7 +13,7 @@ const { title, description, pubDate, updatedDate } = Astro.props;
             <div class="prose">
                 <div class="title">
                     <div class="date">
-                        <FormattedDate date={new Date()} />
+                        <FormattedDate date={pubDate} />
                         {
                             updatedDate && (
                                 <div class="last-updated-on">

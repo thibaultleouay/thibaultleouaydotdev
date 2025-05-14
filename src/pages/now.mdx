@@ -1,11 +1,6 @@
 ---
 ---
 
-import dayjs from "dayjs";
-
-export const lastModified = dayjs()
-  .utc(frontmatter.lastModified)
-  .format("HH:mm:ss DD MMMM YYYY UTC");
 
 import Layout from "../layouts/Layout.astro";
 
@@ -15,11 +10,10 @@ import Layout from "../layouts/Layout.astro";
     </div>
     <article class="prose">
         ### Now
+        Spliting my time between my family, [openstatus.dev](https://openstatus.dev) and [runreal](https://www.runreal.dev).
+
         Traing for a bike race in early june, and a small trail in early July
 
-
-        Spliting my time between [openstatus.dev](https://openstatus.dev), [runreal](https://www.runreal.dev) and my family.
-
     </article>
-    <p class="text-xs text-gray-700">Last modified on {lastModified}</p>
+    <p class="text-xs text-gray-700">Last modified on {frontmatter.lastModified}</p>
 </Layout>
