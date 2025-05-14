@@ -1,75 +1,66 @@
 ---
 import { getCollection } from "astro:content";
-import Layout from "../layouts/Layout.astro"
+import Layout from "../layouts/Layout.astro";
 import FormattedDate from "../components/FormattedDate.astro";
-const posts = (await getCollection('blog')).sort(
-	(a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
+const posts = (await getCollection("blog")).sort(
+    (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
 );
-
 ---
 
 <Layout>
-        <main>
-            <h1 class="text-xl">Thibault Le Ouay - Ducasse</h1>
-            <p> <a href="/tools">Tools </a>  / <a href="/now"> Now</a> </p>
-            <p>
-                👷‍♀️ Currently building <a href="https://openstatus.dev"
-                    >OpenStatus</a
-                > 👷‍♀️
-                <br />
-                ⚡ Speed Matters ⚡
-                <br />
-                <br />
-                I write code for a living.
-                <br />
-                Want to hire me? <a href="mailto:thibautleouay@gmail.com"
-                    >Email me</a
+    <div class="flex flex-col justify-between min-h-full  ">
+    <div >
+        <h1 class="text-3xl font-semibold text-center">Thibault Le Ouay - Ducasse</h1>
+        <p class="mt-4 text-gray-700 text-center">
+         Currently building <a href="https://openstatus.dev">OpenStatus</a>
+
+        </p>
+        <p class="text-center my-2" >
+            <a
+                href="/now"
+                class="font-medium text-xl underline decoration-2 underline-offset-4 text-gray-950 hover:text-gray-600"
+            >
+                Now</a
+            > /  <a
+                href="/tools"
+                class="font-medium text-xl underline decoration-2 underline-offset-4 text-gray-950 hover:text-gray-600"
+                >Tools</a
+            >
+        </p>
+
+        <h2 class="font-semibold text-xl">Articles</h2>
+        <ul>
+            {
+                posts.map((post) => (
+                    <li class="">
+                        <a class="hover:text-gray-500" href={`/${post.slug}/`}>
+                            {post.data.title}
+                            <span class="text-sm text-gray-500">
+                                <FormattedDate date={post.data.pubDate} />
+                            </span>
+                        </a>
+                    </li>
+                ))
+            }
+        </ul>
+
+        <!-- <h2>Useful links </h2> -->
+        <!-- <ul>
+            <li>
+                <a href="https://bsky.app/profile/thibaultleouay.dev">bsky</a>
+            </li>
+            <li><a href="https://www.openstatus.dev">OpenStatus</a></li>
+            <li><a href="https://github.com/thibaultleouay">GitHub</a></li>
+            <li>
+                <a href="https://www.linkedin.com/in/thibault-le-ouay-ducasse/"
+                    >LinkedIn</a
                 >
-                <br />
-            </p>
-            <h2 class="font-semibold text-lg">Articles</h2>
-            <ul>
-					{
-						posts.map((post) => (
-							<li class="">
-								<a class="hover:text-gray-500" href={`/${post.id}/`}>
-									{post.data.title}
-									<span class="text-sm">
-										<FormattedDate date={post.data.pubDate} />
-									</span>
-								</a>
-							</li>
-						))
-					}
-				</ul>
+            </li>
+            <li>
+                <a href="https://www.strava.com/athletes/10276254">Strava</a>
+            </li>
+        </ul> -->
+</div>
 
-            <h2>Useful links 🔗</h2>
-            <ul>
-                <li>
-                    <a href="https://bsky.app/profile/thibaultleouay.dev"
-                        >bsky</a
-                    >
-                </li>
-                <li><a href="https://www.openstatus.dev">OpenStatus</a></li>
-                <li><a href="https://github.com/thibaultleouay">GitHub</a></li>
-                <li>
-                    <a
-                        href="https://www.linkedin.com/in/thibault-le-ouay-ducasse/"
-                        >LinkedIn</a
-                    >
-                </li>
-                <li>
-                    <a href="https://www.strava.com/athletes/10276254">Strava</a
-                    >
-                </li>
-            </ul>
-
-            <p>
-                Found a typo send me <a
-                    href="https://github.com/thibaultleouay/thibaultleouaydotdev"
-                    >PR</a
-                >
-            </p>
-        </main>
-
+    </div>
 </Layout>

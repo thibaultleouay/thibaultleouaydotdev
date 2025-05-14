@@ -33,6 +33,9 @@ importers:
       '@biomejs/biome':
         specifier: 1.9.4
         version: 1.9.4
+      '@unocss/preset-typography':
+        specifier: ^66.1.1
+        version: 66.1.1
       '@unocss/preset-web-fonts':
         specifier: ^66.1.1
         version: 66.1.1

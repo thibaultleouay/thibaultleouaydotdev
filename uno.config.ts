@@ -1,17 +1,21 @@
 import { defineConfig } from "unocss";
 import presetWind4 from "@unocss/preset-wind4";
-import presetWebFonts from '@unocss/preset-web-fonts'
+import presetWebFonts from "@unocss/preset-web-fonts";
+import { presetTypography } from "@unocss/preset-typography";
 
 export default defineConfig({
   // ...UnoCSS options
-  presets: [presetWind4(),
+  presets: [
+    presetWind4(),
+    presetTypography(),
     presetWebFonts({
-      provider: 'bunny', // default provider
+      themeKey: "font",
+      provider: "google", // default provider
       fonts: {
         // these will extend the default theme
-        sans: 'Roboto',
-        mono: ['Fira Code', 'Fira Mono'],
-
+        sans: "Roboto",
+        mono: ["JetBrains Mono"],
       },
-    })],
+    }),
+  ],
 });

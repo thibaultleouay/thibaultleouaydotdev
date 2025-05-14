@@ -1,5 +1,5 @@
 ---
-import 'virtual:uno.css'
+import "virtual:uno.css";
 import BaseHead from "../components/BaseHead.astro";
 import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
 
@@ -9,19 +9,28 @@ interface Props {
 }
 
 const { title, description } = Astro.props;
-
 ---
+
 <!doctype html>
-<html lang="en">
+<html lang="en" class="h-dvh font-mono">
     <head>
-    <BaseHead
-        title={title ? title : SITE_TITLE}
-        description={description ? description : SITE_DESCRIPTION}
-    />
+        <BaseHead
+            title={title ? title : SITE_TITLE}
+            description={description ? description : SITE_DESCRIPTION}
+        />
     </head>
-    <body class="font-mono max-w-2xl mx-auto p-2ch ">
 
-    <slot />
-
+    <body class="max-w-2xl mx-auto flex min-h-full flex-col">
+        <main class="">
+            <slot />
+        </main>
+        <div class="mt-12 text-center">
+            <p class="text-sm text-gray-700">
+                Found a typo send me <a
+                    href="https://github.com/thibaultleouay/thibaultleouaydotdev"
+                    >PR</a
+                >
+            </p>
+        </div>
     </body>
-    </html>
+</html>
