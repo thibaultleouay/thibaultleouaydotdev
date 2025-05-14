@@ -1,18 +1,25 @@
 ---
 ---
 
+import dayjs from "dayjs";
+
+export const lastModified = dayjs()
+  .utc(frontmatter.lastModified)
+  .format("HH:mm:ss DD MMMM YYYY UTC");
+
 import Layout from "../layouts/Layout.astro";
 
 <Layout>
     <div>
         <a href="/" class="font-medium text-xl underline decoration-2 underline-offset-4 text-gray-950 hover:text-gray-600"> Home</a>
     </div>
-<article class="prose">
-## Now
+    <article class="prose">
+        ### Now
+        Traing for a bike race in early june, and a small trail in early July
 
-Traing for a bike race in early june, and a small trail in early July
 
-Spliting my time between [openstatus.dev](https://openstatus.dev), [runreal](https://www.runreal.dev) and my family.
+        Spliting my time between [openstatus.dev](https://openstatus.dev), [runreal](https://www.runreal.dev) and my family.
 
-</article>
+    </article>
+    <p class="text-xs text-gray-700">Last modified on {lastModified}</p>
 </Layout>
