@@ -13,27 +13,27 @@ const posts = (await getCollection("blog")).sort(
     <div >
         <h1 class="text-3xl font-semibold text-center">Thibault Le Ouay - Ducasse</h1>
         <p class="mt-4 text-gray-700 text-center">
-         Currently building <a href="https://openstatus.dev">OpenStatus</a>
+         Currently building <a  class="hover:text-gray-500" href="https://openstatus.dev">OpenStatus</a>
 
         </p>
         <p class="text-center my-2" >
             <a
                 href="/now"
-                class="font-medium text-xl underline decoration-2 underline-offset-4 text-gray-950 hover:text-gray-600"
+                class="font-medium text-xl underline decoration-2 underline-offset-4 text-gray-950 hover:text-gray-700"
             >
                 Now</a
             > /  <a
                 href="/tools"
-                class="font-medium text-xl underline decoration-2 underline-offset-4 text-gray-950 hover:text-gray-600"
+                class="font-medium text-xl underline decoration-2 underline-offset-4 text-gray-950 hover:text-gray-700"
                 >Tools</a
             >
         </p>
-        <h2 class="font-semibold text-xl inline-flex flex-row items-center justify-center">Articles <a href="/rss.xml" class="hover:text-gray-700"><RSS class="h-4 w-4 ml-2" /></a></h2></a>
+        <h2 class="font-semibold text-xl inline-flex flex-row items-center justify-center">Articles </h2>
         <ul>
             {
                 posts.map((post) => (
                     <li class="">
-                        <a class="hover:text-gray-500" href={`/${post.slug}/`}>
+                        <a  class="hover:text-gray-700" href={`/${post.slug}/`}>
                             {post.data.title}
                             <span class="text-sm text-gray-500">
                                 <FormattedDate date={post.data.pubDate} />
