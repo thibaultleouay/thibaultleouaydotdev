@@ -11,22 +11,22 @@
     "astro": "astro"
   },
   "dependencies": {
-    "@astrojs/check": "^0.9.4",
-    "@astrojs/cloudflare": "^12.5.2",
-    "@astrojs/mdx": "^4.2.6",
-    "@astrojs/rss": "^4.0.11",
-    "@astrojs/sitemap": "^3.4.0",
-    "astro": "^5.7.12",
-    "dayjs": "^1.11.13",
-    "typescript": "^5.8.3"
+    "@astrojs/check": "0.9.4",
+    "@astrojs/cloudflare": "12.5.3",
+    "@astrojs/mdx": "4.2.6",
+    "@astrojs/rss": "4.0.11",
+    "@astrojs/sitemap": "3.4.0",
+    "astro": "5.7.13",
+    "dayjs": "1.11.13",
+    "typescript": "5.8.3"
   },
   "devDependencies": {
     "@biomejs/biome": "1.9.4",
-    "@unocss/preset-typography": "^66.1.1",
-    "@unocss/preset-web-fonts": "^66.1.1",
-    "@unocss/preset-wind4": "^66.1.1",
-    "@unocss/reset": "^66.1.1",
-    "unocss": "66.1.1",
+    "@unocss/preset-typography": "66.1.2",
+    "@unocss/preset-web-fonts": "66.1.2",
+    "@unocss/preset-wind4": "66.1.2",
+    "@unocss/reset": "66.1.2",
+    "unocss": "66.1.2",
     "wrangler": "4.14.4"
   },
   "packageManager": "pnpm@10.11.0"
