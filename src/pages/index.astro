@@ -1,6 +1,5 @@
 ---
 import { getCollection } from "astro:content";
-import RSS from '../components/rss.svg'
 import Layout from "../layouts/Layout.astro";
 import FormattedDate from "../components/FormattedDate.astro";
 const posts = (await getCollection("blog")).sort(
