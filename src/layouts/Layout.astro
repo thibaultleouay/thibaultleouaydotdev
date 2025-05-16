@@ -20,15 +20,37 @@ const { title, description } = Astro.props;
         />
     </head>
 
-    <body class="max-w-2xl mx-auto flex min-h-full flex-col">
+    <body class="max-w-2xl mx-auto flex min-h-full flex-col p-2">
         <main class="mt-8">
             <slot />
         </main>
-        <div class="mt-12 text-center">
+        <div class="mt-12 text-center space-y-2">
             <p class="text-sm text-gray-700">
                 Found a typo send me <a
                     href="https://github.com/thibaultleouay/thibaultleouaydotdev"
+                    class="hover:text-gray-500"
                     >PR</a
+                >
+            </p>
+            <p class="text-xs">
+                <a
+                    href="https://bsky.app/profile/thibaultleouay.dev"
+                    target="_blank"
+                    rel="noreferrer"
+                    class="font-medium underline decoration-1 underline-offset-4 text-gray-950 hover:text-gray-700">Bluesky</a
+                > / <a
+                    href="https://github.com/thibaultleouay"
+                    target="_blank"
+                    rel="noreferrer"
+                    class="font-medium underline decoration-1 underline-offset-4 text-gray-950 hover:text-gray-700"
+                >
+                    GitHub
+                </a> /
+                <a
+                    href="https://www.linkedin.com/in/thibault-le-ouay-ducasse/"
+                    target="_blank"
+                    rel="noreferrer"
+                    class="font-medium underline decoration-1 underline-offset-4 text-gray-950 hover:text-gray-700">Linkedin</a
                 >
             </p>
         </div>
