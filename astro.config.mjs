@@ -13,7 +13,7 @@ export default defineConfig({
   },
   integrations: [mdx(), sitemap(),     UnoCSS({injectReset:true})],
   output: "server",
-  adapter: cloudflare(),
+  adapter: cloudflare({imageService: 'cloudflare'}),
   vite:{
       optimizeDeps: {
         include: ['dayjs'],
