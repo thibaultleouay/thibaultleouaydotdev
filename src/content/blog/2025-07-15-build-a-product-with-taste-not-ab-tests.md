@@ -12,4 +12,4 @@ If it looks and feels great to use, it will grow through word of mouth.
 
 However, building a product only based on conversion rate metrics may result in a Christmas Tree software.
 
-![A Christmas tree software](../../assets/christmas-tree-software.png)
+![A Christmas tree software](/assets/christmas-tree-software.png)
